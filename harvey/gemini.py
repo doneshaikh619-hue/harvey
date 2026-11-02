@@ -18,7 +18,7 @@ from typing import Any
 
 logger = logging.getLogger("harvey.gemini")
 
-DEFAULT_GEMINI_MODEL = "gemini-2.0-flash"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
@@ -121,8 +121,8 @@ class GeminiClient:
             if not parts:
                 return ""
 
-            text = parts[0].get("text", "")
-            return text.strip()
+            text_parts = [p.get("text", "") for p in parts if "text" in p]
+            return "".join(text_parts).strip()
         except Exception as e:
             logger.error(f"Failed to parse Gemini response: {e}")
             return ""
