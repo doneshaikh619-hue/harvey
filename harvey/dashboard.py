@@ -237,13 +237,13 @@ async def get_setup_status():
     })
 
     # 4. Email verification (needed for addresses to be sendable, not 'guess')
-    verifier_set = _has("REOON_API_KEY") or _has("ZEROBOUNCE_API_KEY") or _has("HUNTER_API_KEY") or _has("EMAIL_VERIFICATION")
-    verifier_label = "Email verification (Built-in DNS/MX)" if _has("EMAIL_VERIFICATION") and not (_has("REOON_API_KEY") or _has("ZEROBOUNCE_API_KEY") or _has("HUNTER_API_KEY")) else "Email verification key"
+    verifier_set = _has("REOON_API_KEY") or _has("ZEROBOUNCE_API_KEY") or _has("HUNTER_API_KEY")
     checks.append({
-        "id": "verifier", "label": verifier_label,
+        "id": "verifier", "label": "Email verification key",
         "done": verifier_set,
         "required": True,
-        "help": "Add a Reoon (free 600/mo), ZeroBounce, or Hunter key in Settings, or use built-in DNS/MX verification.",
+        "help": "Add a Reoon (free 600/mo), ZeroBounce, or Hunter key in Settings — "
+                "without one, found emails stay 'guess' and are never sent.",
     })
 
     # 5. Config valid

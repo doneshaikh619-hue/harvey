@@ -671,8 +671,6 @@ async def _verify_candidate(email: str, mx_type: str, env) -> tuple[Optional[str
             status = _status_from_verdict(verdict)
             if status is not None:
                 return status, catch_all_seen
-        if os.getenv("EMAIL_VERIFICATION", "").lower() in ("built-in", "direct", "true", "enabled"):
-            return "verified", False
         return None, catch_all_seen
 
     # Small / self-hosted: Reoon → SMTP (still works here) → Hunter.
