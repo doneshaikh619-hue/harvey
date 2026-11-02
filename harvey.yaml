@@ -72,7 +72,7 @@ icp:
 channels:
   email:
     enabled: true
-    provider: "gmail"          # gmail | microsoft | smtp | instantly
+    provider: "smtp"          # gmail | microsoft | smtp | instantly
     max_daily_sends: 50
     require_approval: true      # native: review in Outbox; Instantly: sending held
     send_to_risky: false
