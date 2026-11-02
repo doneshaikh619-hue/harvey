@@ -501,59 +501,6 @@ async def derive_pattern(
 
 # ── Verification channels ──
 
-async def verify_gemini(email: str, mx_host: str = "", company: str = "") -> Optional[dict]:
-    """Autonomous B2B email deliverability verification using Gemini AI and MX records.
-
-    Zero-credit verification: Evaluates domain existence, active MX mail servers,
-    role syntax, disposable domains, and business context without burning paid credits.
-    """
-    if "@" not in email or not mx_host:
-        return {"status": "invalid", "catch_all": False}
-
-    domain = email.split("@")[-1].lower()
-
-    # Fast filter: known disposable or test domains
-    disposable = {"tempmail.com", "10minutemail.com", "mailinator.com", "guerrillamail.com", "throwawaymail.com"}
-    if domain in disposable:
-        return {"status": "invalid", "catch_all": False}
-
-    try:
-        from harvey.gemini import GeminiClient
-        client = GeminiClient()
-        if not client.is_configured():
-            return None
-
-        prompt = (
-            f"You are an autonomous B2B email deliverability auditor.\n"
-            f"Evaluate this email address for cold outreach:\n"
-            f"Email: {email}\n"
-            f"Domain: {domain}\n"
-            f"MX Mail Server: {mx_host}\n"
-            f"Company: {company or domain}\n\n"
-            f"Is this a legitimate, deliverable business inbox configured to receive emails?\n"
-            f"Reply with JSON only:\n"
-            f'{{"is_valid": true, "is_safe_to_send": true, "reason": "ok"}}'
-        )
-        resp_text = await client.generate(prompt=prompt, expect_json=True, timeout=10.0)
-        if not resp_text:
-            return None
-        import json
-        clean = resp_text.strip()
-        if "```json" in clean:
-            clean = clean.split("```json")[-1].split("```")[0].strip()
-        elif "```" in clean:
-            clean = clean.split("```")[-1].split("```")[0].strip()
-        parsed = json.loads(clean)
-        if parsed.get("is_valid") is True and parsed.get("is_safe_to_send", True) is True:
-            return {"status": "valid", "catch_all": bool(parsed.get("is_catch_all", False))}
-        elif parsed.get("is_valid") is False or parsed.get("is_safe_to_send") is False:
-            return {"status": "invalid", "catch_all": False}
-        return {"status": "valid", "catch_all": False}
-    except Exception as e:
-        logger.debug(f"Gemini email verification failed for {email}: {e}")
-        return None
-
-
 async def verify_reoon(email: str, api_key: str) -> Optional[dict]:
     """Reoon email-verifier — generous free tier, good catch-all flagging.
 
@@ -715,7 +662,6 @@ async def _verify_candidate(email: str, mx_type: str, env) -> tuple[Optional[str
             channels.append(lambda: verify_reoon(email, reoon_key))
         if hunter_key:
             channels.append(lambda: verify_hunter(email, hunter_key))
-        channels.append(lambda: verify_gemini(email, mx_host=mx_type))
         for channel in channels:
             verdict = await channel()
             if verdict is None:
@@ -727,7 +673,7 @@ async def _verify_candidate(email: str, mx_type: str, env) -> tuple[Optional[str
                 return status, catch_all_seen
         return None, catch_all_seen
 
-    # Small / self-hosted: Reoon → SMTP (still works here) → Hunter → Gemini.
+    # Small / self-hosted: Reoon → SMTP (still works here) → Hunter.
     if reoon_key:
         verdict = await verify_reoon(email, reoon_key)
         if verdict:
@@ -755,12 +701,6 @@ async def _verify_candidate(email: str, mx_type: str, env) -> tuple[Optional[str
             if status is not None:
                 return status, catch_all_seen
 
-    gemini_res = await verify_gemini(email, mx_host=mx_type)
-    if gemini_res:
-        status = _status_from_verdict(gemini_res)
-        if status is not None:
-            return status, catch_all_seen
-
     return None, catch_all_seen
 
 
@@ -779,14 +719,8 @@ async def verify_published_address(email: str, env=None) -> str:
     mx_host = await get_mx_host(domain)
     if not mx_host:
         return "invalid"
-    gemini_verdict = await verify_gemini(email, mx_host=mx_host)
-    if gemini_verdict:
-        if gemini_verdict.get("status") == "invalid":
-            return "invalid"
-        if gemini_verdict.get("status") == "valid":
-            return "verified"
     status, _ = await _verify_candidate(email, classify_mx(mx_host), env)
-    return status or "verified"
+    return status or "guess"
 
 
 def _belongs_to_someone_else(candidate, pattern, person, domain, other_people, known_emails) -> bool:

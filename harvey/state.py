@@ -33,7 +33,7 @@ BUSY_TIMEOUT_SECONDS = 30.0
 
 # Email statuses the Writer drafts for. Shared with the heartbeat so it only
 # chooses write_campaign when there is something the Writer will act on.
-WRITABLE_EMAIL_STATUSES = ("verified", "risky")
+WRITABLE_EMAIL_STATUSES = ("verified",)
 # Settings key, per prospect: the user emailed them by hand from the
 # dashboard. Its value is the status they had before, so undo is exact; its
 # presence tells the Sender never to email them as well.
