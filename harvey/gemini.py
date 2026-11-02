@@ -16,6 +16,9 @@ import urllib.error
 import urllib.request
 from typing import Any
 
+from dotenv import load_dotenv
+load_dotenv()
+
 logger = logging.getLogger("harvey.gemini")
 
 DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"

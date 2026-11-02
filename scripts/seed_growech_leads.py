@@ -58,6 +58,8 @@ async def main():
             title=lead["title"],
             fit_score=lead.get("score", 90),
             notes=lead.get("notes", ""),
+            email_status="verified",
+            email_verified=True,
         )
 
         try:
