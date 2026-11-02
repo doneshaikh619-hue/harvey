@@ -25,7 +25,7 @@ load_dotenv()
 
 logger = logging.getLogger("harvey.gemini")
 
-DEFAULT_GEMINI_MODEL = "gemini-flash-lite-latest"
+DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
@@ -56,35 +56,48 @@ class GeminiClient:
                 retryable=False,
             )
 
-        endpoint = f"{GEMINI_API_BASE}/{self.model}:generateContent?key={self.api_key}"
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(
-            endpoint,
-            data=data,
-            headers={"Content-Type": "application/json"},
-            method="POST",
-        )
+        models_to_try = [self.model]
+        if self.model != "gemini-flash-lite-latest":
+            models_to_try.append("gemini-flash-lite-latest")
 
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                body = resp.read().decode("utf-8", errors="replace")
-                return json.loads(body)
-        except urllib.error.HTTPError as e:
-            err_body = e.read().decode("utf-8", errors="replace")
-            status = e.code
-            retryable = status in (429, 500, 503, 504)
-            msg = f"Gemini API HTTP {status}: {err_body[:300]}"
-            if status == 400:
-                logger.error(f"Gemini bad request: {err_body}")
-            elif status == 403 or status == 401:
-                logger.error("Gemini authentication failed. Verify GEMINI_API_KEY in .env.")
-            elif status == 429:
-                logger.warning("Gemini rate limit exceeded. Backing off...")
-            raise GeminiError(msg, retryable=retryable, status_code=status) from e
-        except urllib.error.URLError as e:
-            raise GeminiError(f"Network error reaching Gemini: {e.reason}", retryable=True) from e
-        except Exception as e:
-            raise GeminiError(f"Unexpected error calling Gemini: {e}", retryable=False) from e
+        last_exc = None
+        for m in models_to_try:
+            endpoint = f"{GEMINI_API_BASE}/{m}:generateContent?key={self.api_key}"
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(
+                endpoint,
+                data=data,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    body = resp.read().decode("utf-8", errors="replace")
+                    return json.loads(body)
+            except urllib.error.HTTPError as e:
+                err_body = e.read().decode("utf-8", errors="replace")
+                status = e.code
+                retryable = status in (429, 500, 503, 504)
+                msg = f"Gemini API ({m}) HTTP {status}: {err_body[:300]}"
+                if status == 400:
+                    logger.error(f"Gemini bad request: {err_body}")
+                elif status == 403 or status == 401:
+                    logger.error("Gemini authentication failed. Verify GEMINI_API_KEY in .env.")
+                elif status in (500, 503) and len(models_to_try) > 1 and m != models_to_try[-1]:
+                    logger.warning(f"Gemini model {m} unavailable ({status}), falling back to {models_to_try[-1]}...")
+                    continue
+                last_exc = GeminiError(msg, retryable=retryable, status_code=status)
+            except (TimeoutError, urllib.error.URLError) as e:
+                if len(models_to_try) > 1 and m != models_to_try[-1]:
+                    logger.warning(f"Gemini model {m} timed out, falling back to {models_to_try[-1]}...")
+                    continue
+                last_exc = GeminiError(f"Network error reaching Gemini ({m}): {e}", retryable=True)
+            except Exception as e:
+                last_exc = GeminiError(f"Unexpected error calling Gemini: {e}", retryable=False)
+
+        if last_exc:
+            raise last_exc
 
     async def generate(
         self,

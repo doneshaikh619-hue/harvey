@@ -10,7 +10,7 @@ persona:
 
 brain:
   provider: "gemini"          # gemini (recommended via GEMINI_API_KEY) | claude | codex
-  model: "gemini-flash-lite-latest"
+  model: "gemini-3.8-flash"   # gemini-3.8-flash with auto-fallback
 
 product:
   name: "Growech Digital Platforms, WhatsApp Cloud Automation & Autonomous AI Suite"
@@ -76,7 +76,7 @@ channels:
     provider: "smtp"          # gmail | microsoft | smtp | instantly
     max_daily_sends: 50
     require_approval: true      # native: review in Outbox; Instantly: sending held
-    send_to_risky: false
+    send_to_risky: true
     max_bounce_rate: 0.05
     signature:
       logo: ""
@@ -91,7 +91,7 @@ channels:
 
 usage:
   max_daily_claude_percent: 80
-  heartbeat_interval_minutes: 15
+  heartbeat_interval_minutes: 5
   quiet_hours:
     start: "05:00"
     end: "05:01"
