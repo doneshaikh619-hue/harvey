@@ -10,7 +10,7 @@ persona:
 
 brain:
   provider: "gemini"          # gemini (recommended via GEMINI_API_KEY) | claude | codex
-  model: "gemini-3.5-flash"   # gemini-3.5-flash | claude-3-5-sonnet | auto
+  model: "gemini-flash-lite-latest"
 
 product:
   name: "Growech Digital Platforms, WhatsApp Cloud Automation & Autonomous AI Suite"
@@ -93,8 +93,8 @@ usage:
   max_daily_claude_percent: 80
   heartbeat_interval_minutes: 15
   quiet_hours:
-    start: "22:00"
-    end: "07:00"
+    start: "05:00"
+    end: "05:01"
     timezone: "Asia/Karachi"
 
 compliance:

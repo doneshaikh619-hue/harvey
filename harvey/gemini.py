@@ -16,12 +16,16 @@ import urllib.error
 import urllib.request
 from typing import Any
 
+from pathlib import Path
 from dotenv import load_dotenv
+
+_env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(_env_path if _env_path.exists() else None)
 load_dotenv()
 
 logger = logging.getLogger("harvey.gemini")
 
-DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
+DEFAULT_GEMINI_MODEL = "gemini-flash-lite-latest"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
