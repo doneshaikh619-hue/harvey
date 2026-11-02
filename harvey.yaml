@@ -38,14 +38,14 @@ product:
 
 icp:
   industries:
-    - "Architecture & Interior Design"
-    - "Medical, Dental & Aesthetic Clinics"
-    - "Restaurants, Cafes & Fine Dining"
-    - "Automotive Detailing & PPF Studios"
-    - "Real Estate Agencies & Developers"
-    - "E-Commerce & Direct-to-Consumer Brands"
-    - "B2B Professional Services & Tech Agencies"
-  company_size: "5-150 employees"
+    - "architects"
+    - "dental clinic"
+    - "aesthetic clinic"
+    - "restaurant"
+    - "car detailing"
+    - "real estate agency"
+    - "ecommerce brand"
+  company_size: ""
   titles:
     - "Founder"
     - "CEO"
@@ -59,6 +59,7 @@ icp:
     - "E-commerce Director"
   geography:
     - "Pakistan"
+    - "Dubai"
     - "United Arab Emirates"
     - "United Kingdom"
     - "United States"
