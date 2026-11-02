@@ -99,12 +99,12 @@ class Brain:
         self._usage_limited_until = 0.0
         self._usage_pause_recorded = False
         self._status_synced = False
+        self.gemini = None
         if self.provider == "gemini":
-            return await self._think_gemini(
-                prompt, session_id=session_id, expect_json=expect_json,
-                timeout=timeout, max_retries=max_retries, agent=agent, task=task,
-            )
-        if self.provider == "codex":
+            from harvey.gemini import GeminiClient, GeminiQuotaClient
+            self.gemini = GeminiClient(model=self.model)
+            self.quota = GeminiQuotaClient(self.gemini)
+        elif self.provider == "codex":
             from harvey.codex import CodexClient, CodexQuotaClient
             self.codex = CodexClient(
                 model=self.model, reasoning_effort=self.config.reasoning_effort
