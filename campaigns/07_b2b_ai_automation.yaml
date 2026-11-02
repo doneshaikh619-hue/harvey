@@ -1,0 +1,43 @@
+campaign:
+  id: "b2b-ai-automation"
+  name: "B2B Companies & Enterprise Workflow Automation"
+  vertical: "B2B Services, Logistics, Corporate Operations, Tech Agencies"
+  target_geography: ["Pakistan", "UAE", "Global"]
+
+icp:
+  titles:
+    - "Chief Operating Officer (COO)"
+    - "Chief Technology Officer (CTO)"
+    - "VP Operations"
+    - "Head of Digital Transformation"
+    - "Managing Director"
+  company_size: "15-200 employees"
+  signals:
+    - "Staff spending hours manually copying data between invoices, PDFs, and spreadsheets"
+    - "Looking to reduce overhead without hiring additional junior clerical staff"
+    - "Exploring applied AI and internal RAG knowledge bases"
+
+value_proposition:
+  hook: "Domain-trained autonomous AI agents and automated document processing pipelines that eliminate 80% of repetitive data entry with zero hallucinations."
+  case_study: "B2B operations client automated 1,400 monthly invoice validations and ERP synchronizations, reducing processing backlog from 3 days to under 4 minutes."
+  solution_url: "https://growech.site/services/ai-workflow-automation.html"
+
+email_sequence:
+  touch_1:
+    subject: "Automating operational data entry at {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Notice {{company_name}} is scaling transaction volume across {{business_area}}.
+
+      Curious: how much time does your operations team currently spend manually extracting data from inbound client documents, invoices, or customer support queries?
+
+      At Growech Solution, we engineer autonomous AI workflow pipelines and domain-trained RAG agents equipped with strict deterministic guardrails. They automatically parse PDFs, update internal ERP/CRMs, and escalate exceptions to human leads.
+
+      One client we automated this for reduced their document processing cycle from 3 days to 4 minutes without adding headcount.
+
+      Would you be open to a 15-minute workflow audit to see where your team could reclaim 15+ hours weekly?
+
+      Best,
+      Harvey | Growech Solution
+      https://growech.site

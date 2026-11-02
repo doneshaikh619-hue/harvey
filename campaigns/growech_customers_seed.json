@@ -1,0 +1,136 @@
+[
+  {
+    "company_name": "Studio Archiform",
+    "contact_name": "Tariq Hasan",
+    "first_name": "Tariq",
+    "title": "Principal Architect & Founder",
+    "email": "tariq@archiform.pk",
+    "industry": "Architecture & Interior Design",
+    "location": "Clifton, Karachi, Pakistan",
+    "campaign": "turnkey-architects",
+    "custom_variables": {
+      "project_name_or_style": "Contemporary Coastal Villa",
+      "company_name": "Studio Archiform"
+    },
+    "score": 92,
+    "status": "ready_to_send",
+    "notes": "Completed luxury DHA Phase 8 residence; portfolio currently hosted on slow PDF viewer. High conversion potential for bespoke web platform."
+  },
+  {
+    "company_name": "Al-Rehman Dental & Aesthetic Center",
+    "contact_name": "Dr. Farhan Siddiqui",
+    "first_name": "Farhan",
+    "title": "Clinical Director & Implantologist",
+    "email": "dr.farhan@alrehmandental.com",
+    "industry": "Medical, Dental & Aesthetic Clinics",
+    "location": "Gulberg, Lahore, Pakistan",
+    "campaign": "dental-aesthetic-clinics",
+    "custom_variables": {
+      "specialty_area": "Cosmetic Dentistry & Dental Implants",
+      "company_name": "Al-Rehman Dental"
+    },
+    "score": 95,
+    "status": "ready_to_send",
+    "notes": "Actively running Meta ads for invisible aligners; no automated WhatsApp booking after 7 PM. High patient appointment leakage."
+  },
+  {
+    "company_name": "L'Aura Aesthetics Dubai",
+    "contact_name": "Dr. Sarah Mansoor",
+    "first_name": "Sarah",
+    "title": "Managing Director & Aesthetic Physician",
+    "email": "sarah@laura-aesthetics.ae",
+    "industry": "Medical, Dental & Aesthetic Clinics",
+    "location": "Jumeirah 1, Dubai, UAE",
+    "campaign": "dental-aesthetic-clinics",
+    "custom_variables": {
+      "specialty_area": "Non-Surgical Facial Rejuvenation",
+      "company_name": "L'Aura Aesthetics"
+    },
+    "score": 98,
+    "status": "ready_to_send",
+    "notes": "High-end clinic in Jumeirah; front desk struggles with multilingual WhatsApp patient inquiries. Prime candidate for Growech WhatsApp AI receptionist."
+  },
+  {
+    "company_name": "The Copper Kettle & Grill",
+    "contact_name": "Omer Khalid",
+    "first_name": "Omer",
+    "title": "Managing Partner & Head of Operations",
+    "email": "omer@copperkettle.pk",
+    "industry": "Restaurants, Cafes & Fine Dining",
+    "location": "F-7 Markaz, Islamabad, Pakistan",
+    "campaign": "restaurants-cafes-dine",
+    "custom_variables": {
+      "company_name": "The Copper Kettle"
+    },
+    "score": 89,
+    "status": "ready_to_send",
+    "notes": "Popular 140-seat dining establishment; paying heavy commission cuts on aggregators; weekend lines back up. Ready for Growech Dine QR ordering & table booking."
+  },
+  {
+    "company_name": "Apex Auto Lab & PPF Studio",
+    "contact_name": "Hamza Abbasi",
+    "first_name": "Hamza",
+    "title": "Founder & Master Detailer",
+    "email": "hamza@apexautolab.com",
+    "industry": "Automotive Detailing & PPF Studios",
+    "location": "Al Quoz Industrial, Dubai, UAE",
+    "campaign": "car-detailing-ppf",
+    "custom_variables": {
+      "car_model": "Porsche 911 GT3 RS",
+      "company_name": "Apex Auto Lab"
+    },
+    "score": 91,
+    "status": "ready_to_send",
+    "notes": "Features supercars regularly on Instagram with 40k followers; flooded with unclosed price inquiries in DMs. Ready for interactive 3D PPF configurator."
+  },
+  {
+    "company_name": "Emerald Heights Real Estate",
+    "contact_name": "Zaid Al-Hussaini",
+    "first_name": "Zaid",
+    "title": "Managing Broker",
+    "email": "zaid@emeraldheights.ae",
+    "industry": "Real Estate Agencies & Developers",
+    "location": "Downtown Dubai, UAE",
+    "campaign": "real-estate-developers",
+    "custom_variables": {
+      "location_or_project": "Sobha Hartland & Creek Harbour",
+      "company_name": "Emerald Heights"
+    },
+    "score": 94,
+    "status": "ready_to_send",
+    "notes": "Marketing luxury off-plan branded residences to overseas GCC & European buyers; needs 5-second WhatsApp brochure dispatch and VIP viewing scheduler."
+  },
+  {
+    "company_name": "Khaas Pret & Couture",
+    "contact_name": "Mahnoor Bilal",
+    "first_name": "Mahnoor",
+    "title": "E-Commerce & Digital Director",
+    "email": "mahnoor@khaaspret.com",
+    "industry": "E-Commerce & Direct-to-Consumer Brands",
+    "location": "Lahore, Pakistan",
+    "campaign": "ecommerce-d2c-brands",
+    "custom_variables": {
+      "company_name": "Khaas Pret"
+    },
+    "score": 88,
+    "status": "ready_to_send",
+    "notes": "D2C fashion apparel brand processing 400+ weekly COD orders; manual phone verification causing 22% order cancellations. Prime candidate for WhatsApp COD confirmation."
+  },
+  {
+    "company_name": "TransLogix B2B Freight",
+    "contact_name": "Kashif Merchant",
+    "first_name": "Kashif",
+    "title": "Chief Operating Officer",
+    "email": "kashif@translogix.com.pk",
+    "industry": "B2B Professional Services & Tech Agencies",
+    "location": "Port Qasim / Karachi, Pakistan",
+    "campaign": "b2b-ai-automation",
+    "custom_variables": {
+      "business_area": "cross-border freight logistics & customs clearing",
+      "company_name": "TransLogix"
+    },
+    "score": 93,
+    "status": "ready_to_send",
+    "notes": "Manual data entry team typing bill of ladings and customs declarations into spreadsheets. Prime candidate for Growech document extraction AI pipeline."
+  }
+]

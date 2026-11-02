@@ -1,0 +1,107 @@
+persona:
+  name: "Harvey"
+  company: "Growech Solution"
+  role: "AI Growth Engineer & Solutions Specialist"
+  email: "contact@growech.site"
+  linkedin: "linkedin.com/company/growech-solution"
+  website: "https://growech.site"
+  whatsapp: "+92 309 8178527"
+  tone: "consultative, confident, technical, high-value, direct"
+
+brain:
+  provider: "gemini"          # gemini (recommended via GEMINI_API_KEY) | claude | codex
+  model: "gemini-2.0-flash"   # gemini-2.0-flash | gemini-1.5-pro | claude-3-5-sonnet | auto
+
+product:
+  name: "Growech Digital Platforms, WhatsApp Cloud Automation & Autonomous AI Suite"
+  description: "Bespoke sub-second web platforms (Next.js/React), official Meta WhatsApp Cloud API workflows, domain-trained autonomous AI agents with strict RAG guardrails, and turnkey industry operating systems (Growech Dine POS & Growech Care Clinic OS) with 100% client code ownership."
+  pricing: "Tailored technical proposals: focused funnels & WhatsApp engines from $499 (PKR 140,000); enterprise platforms & multi-agent AI architectures from $1,500 - $3,500. Zero monthly SaaS seat royalties."
+  key_benefits:
+    - "Sub-second page speeds engineered with Next.js/React, semantic architecture, and 99+ Google Lighthouse performance."
+    - "Official Meta WhatsApp Business Cloud API integration providing instant 3-second customer lead qualification and 24/7 automated booking."
+    - "Autonomous AI Agents grounded strictly in your company SOPs and documents via RAG (zero hallucinations, zero data leakage)."
+    - "Turnkey industry operating systems: Growech Dine (Restaurant POS & contactless QR ordering) and Growech Care (Hospital & Clinic Management OS)."
+    - "100% client code ownership — zero recurring per-user SaaS license markups or vendor lock-in."
+  objection_responses:
+    "too expensive": "Completely understand budget matters. Unlike off-the-shelf SaaS that charges per user every month indefinitely, Growech delivers custom architectures with 100% code ownership. Most of our clients recoup their entire investment within 30-45 days through automated lead capture alone."
+    "already have a developer": "That's great! We frequently partner with in-house teams to handle specialized heavy lifting—like sub-second Next.js architecture, official WhatsApp Cloud API webhooks, or autonomous RAG agents—so your internal team stays 100% focused on core operations."
+    "already use whatsapp": "Manual WhatsApp works during business hours, but 40%+ of customer inquiries arrive off-hours or sit in queues during peak rush. Growech automates instant 3-second lead qualification, appointment booking, and CRM sync 24/7 without losing the personal touch."
+    "not interested": "Understood! Out of curiosity, what is currently your #1 bottleneck in scaling customer inquiries or operational workflows this quarter?"
+  offer:
+    primary: "Full-scale custom Web Platform, WhatsApp API Automation, or AI Agent Architecture"
+    entry: "Free 15-Minute Operational Workflow Audit & Technical Architecture Blueprint"
+    goal: "book_call"              # book_call, start_trial, get_reply
+    booking_method: "calendar_link" # calendar_link, suggest_times, ask_preference
+    booking_url: "https://wa.me/923098178527?text=Salam%20Growech%2C%20I%20would%20like%20to%20book%20a%2015-minute%20technical%20discovery%20consultation"
+    meeting_duration: "15 minutes"
+    meeting_owner: "Mustafa Shaikh (Technical Solutions Lead)"
+
+icp:
+  industries:
+    - "Architecture & Interior Design"
+    - "Medical, Dental & Aesthetic Clinics"
+    - "Restaurants, Cafes & Fine Dining"
+    - "Automotive Detailing & PPF Studios"
+    - "Real Estate Agencies & Developers"
+    - "E-Commerce & Direct-to-Consumer Brands"
+    - "B2B Professional Services & Tech Agencies"
+  company_size: "5-150 employees"
+  titles:
+    - "Founder"
+    - "CEO"
+    - "Managing Director"
+    - "Principal Architect"
+    - "Clinic Owner"
+    - "Medical Director"
+    - "Restaurant Owner"
+    - "Operations Director"
+    - "Head of Marketing"
+    - "E-commerce Director"
+  geography:
+    - "Pakistan"
+    - "United Arab Emirates"
+    - "United Kingdom"
+    - "United States"
+  hiring_signals:
+    - "Sales Representative"
+    - "Marketing Manager"
+    - "Customer Support Lead"
+    - "Front Desk Manager"
+    - "Full Stack Developer"
+
+channels:
+  email:
+    enabled: true
+    provider: "gmail"          # gmail | microsoft | smtp | instantly
+    max_daily_sends: 50
+    require_approval: true      # native: review in Outbox; Instantly: sending held
+    send_to_risky: false
+    max_bounce_rate: 0.05
+    signature:
+      logo: ""
+      width: 140
+      alt: "Growech Solution — Enterprise AI & Web Architectures"
+      link: "https://growech.site"
+      direction: "auto"
+  linkedin:
+    enabled: false
+    max_daily_connections: 20
+    max_daily_messages: 10
+
+usage:
+  max_daily_claude_percent: 80
+  heartbeat_interval_minutes: 15
+  quiet_hours:
+    start: "22:00"
+    end: "07:00"
+    timezone: "Asia/Karachi"
+
+compliance:
+  postal_address: "Growech Solution &bull; Karachi Central Hospital Tech Complex, Karachi, Pakistan &bull; Business Bay, Dubai, UAE"
+  opt_out_line: 'Not interested? Reply "no thanks" and I won''t email again.'
+  do_not_contact: []
+  precleared:
+    enabled: false
+    sender_country: "PK"
+    address_source: "unknown"
+    prospect_country: ""

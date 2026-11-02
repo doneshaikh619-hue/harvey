@@ -1,0 +1,59 @@
+campaign:
+  id: "dental-aesthetic-clinics"
+  name: "Dental, Dermatology & Aesthetic Clinics"
+  vertical: "Medical, Dental, Aesthetic & Specialized Healthcare"
+  target_geography: ["Pakistan", "UAE", "UK"]
+
+icp:
+  titles:
+    - "Clinic Owner"
+    - "Medical Director"
+    - "Lead Aesthetic Physician"
+    - "Principal Dental Surgeon"
+    - "Practice Administrator"
+  company_size: "5-60 employees"
+  signals:
+    - "Running Instagram or Meta ads for teeth whitening, veneers, or laser procedures"
+    - "Patients complaining about busy clinic phone lines or scheduling delays"
+    - "Front desk overwhelmed with repeated pricing and timing questions"
+
+value_proposition:
+  hook: "24/7 automated patient triage, official WhatsApp doctor appointment scheduling, and automated reminders that slash no-shows by 70%."
+  case_study: "Aesthetic clinic deployed Growech's WhatsApp automated booking engine; booked 48 after-hours appointments in the first 3 weeks without front-desk overtime."
+  solution_url: "https://growech.site/solutions/dental-aesthetic-clinics.html"
+  hospital_os_demo: "https://growech.site/care/"
+
+email_sequence:
+  touch_1:
+    subject: "After-hours appointment inquiries at {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Notice {{company_name}} is actively treating patients across specialized {{specialty_area}} procedures.
+
+      Curious: when prospective patients search for treatments late in the evening (typically 8 PM - 11 PM), does your clinic have a 24/7 automated booking channel, or do they have to wait until front desk opens the next morning?
+
+      We build official WhatsApp patient receptionists and clinic operating portals that answer procedure FAQs, check doctor calendar slots, and confirm appointments in under 3 seconds 24/7.
+
+      One specialized clinic we deployed this for captured 48 extra bookings in their first month from evening inquiries alone.
+
+      Would you be open to a 10-minute preview of how the automated patient triage works?
+
+      Best,
+      Harvey | Growech Solution
+      WhatsApp: +92 309 8178527
+
+  touch_2:
+    wait_days: 3
+    subject: "Re: After-hours appointment inquiries at {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Wanted to share this interactive demo of the clinic OS and automated patient booking engine: https://growech.site/care/
+
+      It handles patient EHR, digital intake forms, and automated 24-hour reminder WhatsApps to eliminate patient no-shows.
+
+      Mind if I send over a 2-minute video walkthrough tailored to {{company_name}}?
+
+      Best,
+      Harvey

@@ -1,0 +1,42 @@
+campaign:
+  id: "car-detailing-ppf"
+  name: "Car Detailing, PPF & Automotive Luxury Studios"
+  vertical: "Automotive Detailing, Paint Protection Film (PPF), Ceramic Coating"
+  target_geography: ["Pakistan", "UAE"]
+
+icp:
+  titles:
+    - "Studio Owner"
+    - "Managing Director"
+    - "Lead Detailer & Founder"
+    - "General Manager"
+  company_size: "3-30 employees"
+  signals:
+    - "Flooded with 'Price please' DMs on Instagram with low conversion to paid bookings"
+    - "High-ticket PPF and ceramic packages ($1,000 - $3,500+) requiring consultative customer education"
+    - "Manual service bay scheduling causing scheduling overlaps"
+
+value_proposition:
+  hook: "Interactive PPF & ceramic coating visual package configurators with instant deposit booking and automated WhatsApp customer follow-ups."
+  case_study: "Luxury auto studio converted 2.8x more Instagram inquiries into paid vehicle drop-offs by providing an instant 3D package builder on mobile."
+  solution_url: "https://growech.site/solutions/car-detailing-ppf.html"
+
+email_sequence:
+  touch_1:
+    subject: "Converting Instagram inquiries for {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Followed your recent vehicle wrap and ceramic handover on {{car_model}} — flawless finish and gloss depth.
+
+      Quick question: what percentage of prospective vehicle owners who DM {{company_name}} asking for pricing actually end up booking a bay slot?
+
+      Most detailing studios lose 70%+ of high-ticket PPF inquiries because customers get overwhelmed by package differences or wait hours for a quotation.
+
+      We engineer interactive vehicle package configurators (https://growech.site/solutions/car-detailing-ppf.html) integrated with WhatsApp that let car owners select their exact vehicle size, choose coverage (Front End vs Full Body), and reserve their bay with a deposit in under 60 seconds.
+
+      Worth a quick 5-minute chat to see how this could plug into {{company_name}}'s current client intake?
+
+      Best,
+      Harvey | Growech Solution
+      https://growech.site

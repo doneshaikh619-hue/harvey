@@ -1,0 +1,58 @@
+campaign:
+  id: "restaurants-cafes-dine"
+  name: "Restaurants, Cafes & Fine Dining Hospitality Chains"
+  vertical: "Hospitality, Food & Beverage, Restaurants"
+  target_geography: ["Pakistan", "UAE", "Saudi Arabia"]
+
+icp:
+  titles:
+    - "Restaurant Owner"
+    - "Managing Partner"
+    - "Food & Beverage Director"
+    - "General Manager"
+    - "Operations Head"
+  company_size: "10-100 employees"
+  signals:
+    - "Paying 25-30% commissions on Foodpanda/Careem/Talabat orders"
+    - "Busy telephone lines losing dinner table bookings on weekends"
+    - "No structured customer database for returning loyalty campaigns"
+
+value_proposition:
+  hook: "Eliminating 30% aggregator commissions with Growech Dine: Direct WhatsApp digital menu ordering, automated table reservations, and custom cloud POS."
+  case_study: "Dining group saved PKR 450,000+ in delivery commissions in 60 days by driving recurring direct orders via their branded WhatsApp QR menu."
+  dine_demo_url: "https://growech.site/dine/"
+
+email_sequence:
+  touch_1:
+    subject: "Table reservations & direct ordering for {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Really admire the guest reception at {{company_name}} — the menu concept and dining atmosphere look exceptional.
+
+      One quick question: during peak weekend rush hours, how are you handling table reservation inquiries when the main phone line is tied up with take-out calls?
+
+      We built Growech Dine (https://growech.site/dine/), an automated dining platform that gives restaurants direct WhatsApp QR ordering, automated table booking with instant seat checks, and 0% commission.
+
+      Restaurants using it have cut down weekend phone bottlenecks while saving hundreds of thousands in aggregator platform cuts.
+
+      Would you be open to seeing a 5-minute interactive demo of how the system works for your branch?
+
+      Best,
+      Harvey | Growech Solution
+      https://growech.site/dine/
+
+  touch_2:
+    wait_days: 3
+    subject: "Re: Table reservations & direct ordering for {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Following up briefly with the live demo link: https://growech.site/dine/
+
+      You can test placing an order, table reservations, and KDS kitchen routing directly from your browser.
+
+      Would love to share how easily we can deploy this with {{company_name}}'s logo and menu within 5 days.
+
+      Best,
+      Harvey

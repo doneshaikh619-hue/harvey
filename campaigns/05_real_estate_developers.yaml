@@ -1,0 +1,42 @@
+campaign:
+  id: "real-estate-developers"
+  name: "Real Estate Agencies & Property Developers"
+  vertical: "Real Estate, Off-Plan Developments, Brokerages"
+  target_geography: ["UAE (Dubai, Abu Dhabi)", "Pakistan (Karachi, Lahore, Islamabad)", "UK"]
+
+icp:
+  titles:
+    - "Managing Director"
+    - "Principal Broker"
+    - "Head of Sales"
+    - "Real Estate Developer"
+    - "Marketing Director"
+  company_size: "10-150 agents"
+  signals:
+    - "Spending significant budget on Meta, Bayut, or PropertyFinder leads"
+    - "High lead leakage due to brokers taking 30+ minutes to respond"
+    - "High-net-worth investors demanding instant floor plans and payment milestones on WhatsApp"
+
+value_proposition:
+  hook: "Instant 5-second WhatsApp property brochure delivery, investor capital pre-qualification, and automated private viewing calendar coordination."
+  case_study: "Dubai off-plan brokerage cut lead response lag from 42 minutes to 3 seconds, resulting in a 41% higher verified viewing rate."
+
+email_sequence:
+  touch_1:
+    subject: "5-second lead response for {{company_name}}'s off-plan listings"
+    body: |
+      Hi {{first_name}},
+
+      Notice {{company_name}} is actively marketing off-plan inventory across {{location_or_project}}.
+
+      When an overseas investor inquires from an ad or portal on WhatsApp, how quickly are they receiving the verified project brochure and payment plan?
+
+      In high-ticket real estate, responding in under 60 seconds increases connection rates by over 300%.
+
+      We build dedicated project showcase web platforms and automated WhatsApp investor funnels that deliver full PDF brochures, qualify budget and timeline, and schedule private viewing tours immediately 24/7.
+
+      Would you be open to a 10-minute preview of the Dubai real estate investor funnel?
+
+      Best,
+      Harvey | Growech Solution
+      WhatsApp: +92 309 8178527

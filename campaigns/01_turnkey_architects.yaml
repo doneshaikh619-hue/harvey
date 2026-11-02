@@ -1,0 +1,56 @@
+campaign:
+  id: "turnkey-architects"
+  name: "Turnkey Architects & Interior Design Studios"
+  vertical: "Architecture, Interior Design & Luxury Construction"
+  target_geography: ["Pakistan", "UAE", "UK"]
+
+icp:
+  titles:
+    - "Principal Architect"
+    - "Design Director"
+    - "Founder & Lead Architect"
+    - "Managing Partner"
+    - "Interior Design Studio Owner"
+  company_size: "5-40 employees"
+  signals:
+    - "Recent high-end project completion posted on social media"
+    - "Hiring interior architects or 3D visualizers"
+    - "Website loading slowly or showing generic PDF project portfolios"
+
+value_proposition:
+  hook: "Turning high-end architectural portfolios into interactive 3D client acquisition showcases with instant WhatsApp consultation booking."
+  case_study: "Architectural firm showcase platform loading in <0.8s with interactive project estimator form that increased qualified project inquiries by 3.4x."
+  solution_url: "https://growech.site/solutions/turnkey-architects.html"
+
+email_sequence:
+  touch_1:
+    subject: "Quick observation on {{company_name}}'s project showcase"
+    body: |
+      Hi {{first_name}},
+
+      Loved your recent work on the {{project_name_or_style}} project — the attention to detail on the spatial finishes really stands out.
+
+      Quick question: when prospective residential or commercial clients visit {{company_name}}'s site on mobile, are you finding that most inquire directly or do they drop off before reaching out?
+
+      We recently engineered a bespoke, sub-second architectural platform for a design studio (featuring interactive project estimators and instant WhatsApp consultation booking) that boosted qualified inquiries by 3.4x.
+
+      Worth a brief 5-minute chat to see how your current portfolio setup compares?
+
+      Best,
+      Harvey | Growech Solution
+      https://growech.site
+
+  touch_2:
+    wait_days: 3
+    subject: "Re: Quick observation on {{company_name}}'s project showcase"
+    body: |
+      Hi {{first_name}},
+
+      Following up briefly on this — I know managing active site construction takes priority.
+
+      Here is the exact live architectural case study and showcase framework we built: https://growech.site/solutions/turnkey-architects.html
+
+      Curious if upgrading your digital client intake is on your radar this quarter?
+
+      Best,
+      Harvey

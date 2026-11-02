@@ -1,0 +1,42 @@
+campaign:
+  id: "ecommerce-d2c-brands"
+  name: "E-Commerce & D2C Brands"
+  vertical: "E-Commerce, Direct-to-Consumer, Retail"
+  target_geography: ["Pakistan", "UAE", "UK", "USA"]
+
+icp:
+  titles:
+    - "Founder & CEO"
+    - "E-Commerce Director"
+    - "Head of Growth"
+    - "D2C Brand Manager"
+  company_size: "10-100 employees"
+  signals:
+    - "High mobile traffic with high abandoned cart rates (>70%)"
+    - "Sluggish mobile website loading (>3.5s) on standard Shopify or WooCommerce"
+    - "Cash on Delivery (COD) order verification done manually over phone calls"
+
+value_proposition:
+  hook: "Sub-second headless Next.js storefronts combined with automated WhatsApp abandoned cart recovery and instant COD order confirmation."
+  case_study: "D2C fashion brand recovered PKR 1.2M in abandoned checkout carts in 30 days using Growech's automated WhatsApp checkout recovery funnel."
+  solution_url: "https://growech.site/services/ecommerce-solutions.html"
+
+email_sequence:
+  touch_1:
+    subject: "Recovering mobile abandoned carts at {{company_name}}"
+    body: |
+      Hi {{first_name}},
+
+      Really like what you've built with {{company_name}}'s product line and brand presentation.
+
+      One quick technical question: how are you currently handling abandoned checkouts on mobile? In region, typical email recovery only gets a 12% open rate, while WhatsApp achieves over 90% read rates.
+
+      We engineer sub-second custom e-commerce web platforms (Next.js/React) integrated with automated WhatsApp abandoned cart recovery and 1-tap COD order verification.
+
+      One D2C brand we deployed this for recovered over PKR 1.2M in checkouts in their first 30 days without spending an extra dollar on ads.
+
+      Would you be open to a 10-minute chat to see the numbers and checkout architecture?
+
+      Best,
+      Harvey | Growech Solution
+      https://growech.site
